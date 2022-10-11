@@ -9,7 +9,7 @@ class Square:
     def size(self):
         return (self.__size)
 
-     def size(self, value):
+    def size(self, value):
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -19,7 +19,7 @@ class Square:
     def position(self):
         return (self.__position)
 
-     def position(self, value):
+    def position(self, value):
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
@@ -40,3 +40,13 @@ class Square:
             [print(" ", end="") for j in range(0, self.__position[0])]
             [print("#", end="") for k in range(0, self.__size)]
             print("")
+
+    def __str__(self):
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
