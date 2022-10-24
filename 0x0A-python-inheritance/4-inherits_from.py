@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Contains of a single function"""
+"""Contains a single function"""
 
 
-def is_kind_of_class(obj, a_class):
+def inherits_from(obj, a_class):
     """
-        Check if the object is an instance of a class
-        inherited from
+        Check if the object is instance of a class inherited
+        from directly or indirectly
     """
-    return isinstance(obj, a_class)
+    return ((issubclass(type(obj), a_class)) and type(obj) != a_class)
