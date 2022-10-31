@@ -43,7 +43,7 @@ class Rectangle(Base):
                     raise TypeError("{} must be an integer".format(name))
                 elif value < 0:
                     raise ValueError("{} must be >= 0".format(name))
-                else:
+            else:
                 if type(value) != int:
                     raise TypeError("{} must be an integer".format(name))
                 elif value <= 0:
@@ -129,7 +129,7 @@ class Rectangle(Base):
             keys = ["id", "width", "height", "x", "y"]
             for i, v in enumerate(args):
                 setattr(self, keys[i], v)
-            else:
+        else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
 
