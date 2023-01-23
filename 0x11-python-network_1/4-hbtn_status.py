@@ -1,13 +1,13 @@
-#!/usr/bin/python3
-"""
-fetches https://intranet.hbtn.io/status
-"""
+!/usr/bin/python3
+""" Get the status of a specific website. Requests package version """
 import requests
 
-if __name__ == '__main__':
-    url = "https://intranet.hbtn.io/status"
-    r = requests.get(url)
-    text = r.text
+
+def print_status():
+    req = requests.get('https://intranet.hbtn.io/status')
     print("Body response:")
-    print("\t- type: {}".format(type(text)))
-    print("\t- content: {}".format(text))
+    print("\t- type: {}".format(type(req.text)))
+    print("\t- content: {}".format(req.text))
+
+if __name__ == '__main__':
+    print_status()
